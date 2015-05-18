@@ -1,0 +1,8 @@
+﻿<NavigationWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="MainWin" x:Class="AutoFillerAdvance.MainWindow"
+        Title="MainWindow" Height="600" Width="800" WindowState="Maximized" MinWidth="800" MinHeight="500" Padding="0" WindowStartupLocation="Manual" ShowsNavigationUI="False" Icon="Icon/irctc1.ico" >
+    
+
+</NavigationWindow>

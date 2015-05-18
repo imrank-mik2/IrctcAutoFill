@@ -1,0 +1,20 @@
+#region Login
+            try
+            {
+                if (webBrowser.Document.GetElementById("usernameId") != null)
+                {
+                    webBrowser.Document.GetElementById("usernameId").SetAttribute("value", "imrank_mik");
+                    HtmlElementCollection col = webBrowser.Document.All.GetElementsByName("j_password");
+                    col[0].SetAttribute("value", "mik123");
+                    HtmlElementCollection col1 = webBrowser.Document.All.GetElementsByName("j_captcha");
+                    col1[0].Focus();
+                }
+            }
+            catch (Exception)
+            {
+            }
+#endregion   
+
+
+var date = DateTime.ParseExact("26-05-2015", "dd-mm-yyyy",System.Globalization.CultureInfo.CurrentCulture);
+            txtTimer.Text = date.ToString("ddd MMM dd hh:mm:ss IST yyyy");

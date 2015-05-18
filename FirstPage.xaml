@@ -1,0 +1,129 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" x:Class="AutoFillerAdvance.FirstPage"        
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="FirstPage">
+
+    <Grid x:Name="GrdMain">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+        <TextBlock Name="TxtTimer" Grid.Column="0" HorizontalAlignment="Left" FontSize="18" FontFamily="Stencil" Padding="30,0,30,0" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login User Name" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login Password" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="From Station" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="To Station" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="4"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TrainNumber" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="5"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Date of Journey" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="6"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Quota" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="7"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Class" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="8"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mobile Number" VerticalAlignment="Center" Margin="50,0,0,0" Grid.Row="9"/>
+        <Grid Name="grdPsngrDetLabels" Height="Auto"  VerticalAlignment="Center" Width="Auto" Grid.Row="10" Margin="0" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="TbName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name of Passenger" VerticalAlignment="Center" Margin="20,0,5,5" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TbAge" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age" VerticalAlignment="Center" Margin="20,0,5,5" Grid.Row="1" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TbGender" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Center" Margin="20,0,5,5" Grid.Row="2" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TbBerthPref" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Berth Preference" VerticalAlignment="Center" Margin="20,0,5,5" Grid.Row="3" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TbIdCardType" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID Card Type" VerticalAlignment="Center" Margin="20,0,5,5" Grid.Row="4" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TbIdCardNumber" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID Card Number" VerticalAlignment="Center" Margin="20,0,5,5" Grid.Row="5" Padding="5,0,0,0" />
+
+        </Grid>
+
+        <TextBox x:Name="TxtId" HorizontalAlignment="Left"  TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Center" Width="120" Margin="10,0,0,0" MaxLength="20" Grid.Column="1" Grid.Row="1"/>
+        <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="1" >
+            <PasswordBox x:Name="TxtPass" KeyDown="txtPass_KeyDown" HorizontalAlignment="Left"    VerticalAlignment="Center" Width="120" Margin="10,0,0,0" MaxLength="20" Grid.Column="1" Grid.Row="1"/>
+            <Button x:Name="BtnLogin" Height="Auto" Margin="30,10,10,10" Width="80" Click="btnLogin_Click" Content="LOGIN"/>
+        </StackPanel>
+        <controls:AutoCompleteBox x:Name="AcbFrom"  HorizontalAlignment="Left"  Text="" VerticalAlignment="Center" Width="120" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="3" />
+        <controls:AutoCompleteBox x:Name="AcbTo"  HorizontalAlignment="Left"  Text="" VerticalAlignment="Center" Width="120" Margin="10,0,0,0"  Grid.Column="1" Grid.Row="4" />
+        <TextBox x:Name="TxtTrainNumber" HorizontalAlignment="Left"  TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Center" Width="120" Margin="10,0,0,0" MaxLength="20" Grid.Column="1" Grid.Row="5"/>
+        <DatePicker x:Name="DpDate" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="10,0,0,0" Grid.Row="6" />
+        <ComboBox x:Name="CbQuota" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Grid.Column="1" Margin="10,0,0,0" Grid.Row="7">
+            <ComboBoxItem Content="General" HorizontalAlignment="Left" Width="118.4" IsSelected="True"/>
+            <ComboBoxItem Content="Tatkal" HorizontalAlignment="Left" Width="118.4" />
+        </ComboBox>
+        <ComboBox x:Name="CbClass" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Grid.Row="8" Margin="10,0,0,0" Grid.Column="1">
+            <ComboBoxItem Content="Sleeper" HorizontalAlignment="Left" Width="118" IsSelected="True"/>
+            <ComboBoxItem Content="3AC" HorizontalAlignment="Left" Width="118.4"/>
+            <ComboBoxItem Content="2AC" HorizontalAlignment="Left" Width="118.4"/>
+            <ComboBoxItem Content="1AC" HorizontalAlignment="Left" Width="118.4"/>
+        </ComboBox>
+        <TextBox x:Name="TxtMobile" HorizontalAlignment="Left"  TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Center" Width="120" Margin="10,0,0,0" MaxLength="20" Grid.Column="1" Grid.Row="9"/>
+
+        <Grid x:Name="GrdPassengerDetails" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Left"   VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
+        <Grid Name="GrdCardDetails" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="TbCardNumber" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Card Number</TextBlock>
+            <TextBlock Name="TbCardExpiry" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Card Expiry MM/YYYY</TextBlock>
+            <TextBlock Name="TbCardName" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Name on card</TextBlock>
+            <TextBlock Name="TbCardPin" Margin="10,0,0,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">Card Pin</TextBlock>
+            <TextBox Name="TxtCardNumber" Margin="10,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <TextBox Name="TxtCardExpiryMonth" Margin="10,0,0,0" Width="40" VerticalAlignment="Center" ></TextBox>
+                <TextBox Name="TxtCardExpiryYear" Margin="10,0,0,0"  Width="60" VerticalAlignment="Center"></TextBox>
+            </StackPanel>
+            <TextBox Name="TxtCardName" Margin="10,0,0,0"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+            <PasswordBox Name="TxtCardPin" Margin="10,0,0,0" Grid.Row="3" Grid.Column="1" Width="60" HorizontalAlignment="Left" VerticalAlignment="Center"></PasswordBox>
+        </Grid>
+
+
+
+    </Grid>
+</Page>

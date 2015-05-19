@@ -17,7 +17,7 @@ namespace AutoFillerAdvance
     {
         JourneyDetails _jD = new JourneyDetails();
 
-        IList<String> lsURLs = new List<string>();
+        //IList<String> lsURLs = new List<string>();
 
         public BrowserPage()
         {
@@ -108,7 +108,7 @@ namespace AutoFillerAdvance
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            lsURLs.Add(e.Url.ToString());
+            //lsURLs.Add(e.Url.ToString());
             if (e.Url == WebBrowser.Document.Url)
             {
                 WebBrowser.ScriptErrorsSuppressed = true;

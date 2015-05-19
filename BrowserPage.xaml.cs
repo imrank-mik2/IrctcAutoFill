@@ -48,7 +48,7 @@ namespace AutoFillerAdvance
                 if (WebBrowser.Document.Url.ToString().Contains("mainpage.jsf"))
                 {
                     #region to be triggered at 10 am when tatkal autopilot on
-                    DateTime tenTime = DateTime.ParseExact("10:00:05", "hh:mm:ss", CultureInfo.CurrentCulture);
+                    DateTime tenTime = DateTime.ParseExact("10:00:05", "HH:mm:ss", CultureInfo.CurrentCulture);
                     if ((ChkGoOnTen.IsChecked==false) || (ChkGoOnTen.IsChecked==true && DateTime.Now>tenTime))
                     {
                         String fromStn = WebBrowser.Document.All.GetElementsByName("jpform:fromStation")[0].GetAttribute("value");
@@ -67,9 +67,9 @@ namespace AutoFillerAdvance
 
                                 }
                                 //else if (_jD.Firecounter == 0) //After Submit (when Book Now not available)
-                                else if (_jD.FireCounterTimeStamp.AddSeconds(2) > DateTime.Now ) //After Submit (when Book Now not available)
+                                else if (_jD.FireCounterTimeStamp.AddSeconds(2) < DateTime.Now ) //After Submit (when Book Now not available)
                                 { //Fire SL or 3AC or 2AC button
-                                    if (_jD.TimeStamp.AddSeconds(3) < DateTime.Now)
+                                    if ((_jD.TimeStamp.AddSeconds(3) < DateTime.Now)&&(_jD.Firecounter<=20))
                                     {
                                         DateTime date = DateTime.ParseExact(_jD.Date, "dd/M/yyyy",
                                             CultureInfo.CurrentCulture);
